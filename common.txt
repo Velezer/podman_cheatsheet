@@ -1,0 +1,16 @@
+
+podman ps
+podman ps -a
+
+podman start <container>
+podman stop <container>
+podman rm <container>
+
+
+podman exec -it <container> bash
+podman exec -it <container> /bin/bash
+
+podman volume ls
+podman volume inspect -a
+podman volume prune
+

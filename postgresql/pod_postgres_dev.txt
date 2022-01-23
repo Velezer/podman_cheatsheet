@@ -1,0 +1,20 @@
+podman pod create \
+	--name postgres_dev_pod \
+	-p 8080:80  \
+	-p 5432:5432 
+
+podman run -d \
+	--name pgadmin4_container \
+	--pod postgres_dev_pod \
+	-e PGADMIN_DEFAULT_EMAIL=user@email.com \
+	-e PGADMIN_DEFAULT_PASSWORD=password \
+dpage/pgadmin4:latest
+
+
+podman run -d \
+	--name postgres_container \
+	--pod postgres_dev_pod \
+	-e POSTGRES_USER=user \
+	-e POSTGRES_PASSWORD=password \
+postgres:latest
+

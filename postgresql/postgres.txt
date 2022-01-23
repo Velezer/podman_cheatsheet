@@ -1,0 +1,24 @@
+podman run --name postgres_container \
+	-p 5432:5432 \
+	-e POSTGRES_USER=user \
+	-e POSTGRES_PASSWORD=password \
+postgres:latest
+
+
+
+podman create --name postgres_container \
+	-v /home/ace/sf_win10/podman/postgresql/data:/var/lib/postgresql/data \
+	-p 5432:5432 \
+	-e POSTGRES_USER=user \
+	-e POSTGRES_PASSWORD=password \
+postgres:latest
+
+podman create --name postgres_container \
+	-p 5432:5432 \
+	-e POSTGRES_USER=user \
+	-e POSTGRES_PASSWORD=password \
+postgres:latest
+
+podman exec -it postgres_container bash
+
+psql -U <user_db> -W

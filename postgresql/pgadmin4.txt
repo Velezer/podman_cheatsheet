@@ -1,0 +1,6 @@
+podman run --name pgadmin4_container \
+	-p 8080:80 \
+	-e PGADMIN_DEFAULT_EMAIL=user@email.com \
+	-e PGADMIN_DEFAULT_PASSWORD=password \
+dpage/pgadmin4:latest
+
