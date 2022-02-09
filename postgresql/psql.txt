@@ -1,0 +1,9 @@
+podman exec -it postgres_container bash
+
+psql -U <user_db> -W
+
+\l
+
+\d
+
+CREATE DATABASE <db_name>
