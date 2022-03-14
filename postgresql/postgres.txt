@@ -19,6 +19,8 @@ podman create --name postgres_container \
 	-e POSTGRES_PASSWORD=password \
 postgres:latest
 
+podman start -a postgres_db_container
+
 podman exec -it postgres_container bash
 
 psql -U <user_db> -W
